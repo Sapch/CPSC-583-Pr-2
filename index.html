@@ -53,8 +53,8 @@ https://bl.ocks.org/
 
         // Add a scale for bubble color
         const myColor = d3.scaleOrdinal()
-            .domain(["Asia", "Europe", "North America", "South America","Africa", "Oceania"])
-            .range(d3.schemeSet2);
+            .domain(["Africa", "Asia", "Europe", "North America", "South America", "Oceania"])
+            .range(d3.schemeSet1);
 
         g.append("g")
             .attr("transform", "translate(0," + height + ")")
@@ -84,13 +84,14 @@ https://bl.ocks.org/
             .text("Happiness Score");
 
 
-        //Adding legend
-        var keys = ["Asia", "Europe", "North America", "South America","Africa", "Oceania"];
+
+        var keys = ["Africa", "Asia", "Europe", "North America", "South America", "Oceania"];
 
         var color = d3.scaleOrdinal()
             .domain(keys)
-            .range(d3.schemeSet2);
-
+            .range(d3.schemeSet1);
+        
+        //legend
         var size = 30
         svg.selectAll("mydots")
             .data(keys)
